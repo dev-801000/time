@@ -396,26 +396,50 @@ Decision Tree Implementation with R
 **Algorithm:** Create decision tree for restaurant waiting prediction using R's rpart package.
 
 ```r
-# Required packages
+install.packages("rpart")
+install.packages("rpart.plot")
+
 library(rpart)
 library(rpart.plot)
 
-# Set working directory
-getwd()
-setwd("C:/Users/Nisha/OneDrive/Documents/Nisha")
 
-# Read dataset
+# find a location
+getwd()
+#"C:/Users/Abhikesh/Documents" getwd type kar nar ne ke bad aaye ga
+setwd("C:/Users/Abhikesh/Documents")
+getwd()
+
+data <- data.frame(
+  ALTERNATE = c("Yes","No","Yes","No","Yes"),
+  BAR = c("No","Yes","No","Yes","Yes"),
+  FRIDAY = c("Yes","No","Yes","Yes","No"),
+  HUNGRY = c("Yes","No","Yes","Yes","No"),
+  PRICE = c("$$","$","$$$","$$","$"),
+  RAINING = c("No","Yes","No","No","Yes"),
+  RESERVATION = c("Yes","No","Yes","No","No"),
+  TYPE = c("French","Italian","Thai","Burger","Italian"),
+  WAIT_ESTIMATE = c("0-10","30-60","10-30",">60","0-10"),
+  WILLWAIT = c("Yes","No","Yes","No","Yes")
+)
+
+write.csv(data, "restaurant.csv", row.names = FALSE)
+
+
+library(rpart)
+library(rpart.plot)
+
 d <- read.csv("restaurant.csv")
 
-# Create decision tree
 mytree <- rpart(WILLWAIT ~ ., data = d, minsplit = 1, minbucket = 1)
 
-# Plot the tree
 rpart.plot(mytree)
 
-# Make predictions
 p <- predict(mytree)
-p
+print(p)
+
+
+
+
 ```
 
 **Dataset Structure (restaurant.csv):**
