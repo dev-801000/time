@@ -409,6 +409,8 @@ getwd()
 setwd("C:/Users/Abhikesh/Documents")
 getwd()
 
+#-----
+
 data <- data.frame(
   ALTERNATE = c("Yes","No","Yes","No","Yes"),
   BAR = c("No","Yes","No","Yes","Yes"),
@@ -421,9 +423,9 @@ data <- data.frame(
   WAIT_ESTIMATE = c("0-10","30-60","10-30",">60","0-10"),
   WILLWAIT = c("Yes","No","Yes","No","Yes")
 )
-
 write.csv(data, "restaurant.csv", row.names = FALSE)
 
+#-------------
 
 library(rpart)
 library(rpart.plot)
