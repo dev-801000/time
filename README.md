@@ -545,103 +545,30 @@ Naive Bayes Learning Implementation
 **Algorithm:** Implement Naive Bayes classifier for restaurant dataset using conditional probability.
 
 ```r
-# Load required library
+install.packages("e1071")
 library(e1071)
 
-# Read training and test datasets
-Train <- read.csv(file.choose())  # Select training file
-Test <- read.csv(file.choose())   # Select test file
+getwd()
+setwd()
 
-# Create Naive Bayes model
-model <- naiveBayes(WILLWAIT ~ ., data = Train)
+d <- read.csv("restaurant.csv")
+head(d)
 
-# Check model class
-class(model)
-# [1] "naiveBayes"
+names(d)
 
-# Display model details
+library(e1071)
+model <- naiveBayes(
+WILLWAIT ~ ALTERNATE + BAR + FRIDAY + HUNGRY + PRICE + RAINING + RESERVATION + TYPE + WAIT_ESTIMATE,
+data = d
+)
 model
+
+pred <- predict(model, d)
+table(pred, d$WILLWAIT)
 ```
 
-**Model Output:**
-```
-Naive Bayes Classifier for Discrete Predictors
 
-Call:
-naiveBayes.default(x = X, y = Y, laplace = laplace)
 
-A-priori probabilities:
-Y
- No Yes 
-0.5 0.5 
-
-Conditional probabilities:
-       ALT
-Y        No  Yes
-  No  0.5  0.5
-  Yes 0.5  0.5
-
-       BAR
-Y        No  Yes
-  No  0.5  0.5
-  Yes 0.5  0.5
-
-       FRI
-Y             No        Yes
-  No  0.5000000 0.5000000
-  Yes 0.6666667 0.3333333
-
-       HUN
-Y             No        Yes
-  No  0.6666667 0.3333333
-  Yes 0.1666667 0.8333333
-
-       PAT
-Y       Full None      Some
-  No  0.6666667 0.3333333 0.0000000
-  Yes 0.3333333 0.0000000 0.6666667
-
-       PRICE
-Y         $   $$     $$$
-  No  0.6666667 0.0000000 0.3333333
-  Yes 0.5000000 0.3333333 0.1666667
-
-       RAIN
-Y        No  Yes
-  No  0.6666667 0.3333333
-  Yes 0.6666667 0.3333333
-
-       RES
-Y        No  Yes
-  No  0.6666667 0.3333333
-  Yes 0.5000000 0.5000000
-
-       TYPE
-Y       Burger    French   Italian      Thai
-  No  0.3333333 0.1666667 0.1666667 0.3333333
-  Yes 0.3333333 0.1666667 0.1666667 0.3333333
-
-       EST
-Y         >60     0-10    30-60   30-Oct
-  No  0.3333333 0.3333333 0.1666667 0.1666667
-  Yes 0.0000000 0.6666667 0.1666667 0.1666667
-```
-
-**Make Predictions:**
-```r
-# Predict on test set
-pred <- predict(model, Test)
-
-# Display prediction results
-table(pred)
-# pred
-#  No Yes 
-#   8   4
-```
-
-**Output:** Shows conditional probabilities for each feature and class predictions
-
----
 
 ## PRACTICAL NO: 8
 ### **AIM**
@@ -685,16 +612,7 @@ plt.text(x=new_x-1.7, y=new_y-0.7, s=f"new point, class: {prediction[0]}")
 plt.show()
 ```
 
-**Algorithm Steps:**
-1. Store all training data points
-2. For new point, calculate distance to all training points
-3. Find k nearest neighbors
-4. Assign class based on majority vote of k neighbors
-5. With k=1, assign class of single nearest neighbor
 
-**Output:** Scatter plot showing classification of new point based on nearest neighbor
-
----
 
 ## PRACTICAL NO: 9
 ### **AIM**
@@ -737,70 +655,4 @@ print("X (Features):", X)
 print("Y (Labels):", Y)
 ```
 
-**Key Concepts:**
-- **make_blobs**: Creates Gaussian blob clusters for classification
-- **Decision Boundaries**: Lines separating different classes
-- **Margin**: Distance between decision boundary and nearest data points
-- **Support Vectors**: Data points closest to decision boundary
 
-**Output:** 
-1. Scatter plot of two-class data
-2. Multiple decision boundaries with margins
-3. Feature matrix X and label vector Y
-
----
-
-## 📊 Dataset Requirements
-
-### Restaurant Dataset (restaurant.csv)
-Required columns for Decision Tree and Neural Network practicals:
-- **WILLWAIT**: Target variable (Yes/No)
-- **ALT**: Alternative available (Yes/No)
-- **BAR**: Bar available (Yes/No) 
-- **FRI**: Friday (Yes/No)
-- **HUN**: Hungry (Yes/No)
-- **PAT**: Patrons (None/Some/Full)
-- **PRICE**: Price range ($/$$/$$)
-- **RAIN**: Raining (Yes/No)
-- **RES**: Reservation (Yes/No)
-- **TYPE**: Food type (French/Italian/Thai/Burger)
-- **EST**: Estimated wait (0-10/10-30/30-60/>60)
-
----
-
-## 🛠️ Required Libraries
-
-### Python Libraries:
-```bash
-pip install scikit-learn matplotlib numpy
-```
-
-### R Packages:
-```r
-install.packages(c("rpart", "rpart.plot", "neuralnet", "e1071"))
-```
-
----
-
-## 🚀 Getting Started
-
-1. **Set up Environment**: Install Python/R and required libraries
-2. **Prepare Datasets**: Create or download restaurant.csv file
-3. **Run Algorithms**: Execute each practical step by step
-4. **Analyze Results**: Compare different algorithm performances
-5. **Experiment**: Try different parameters and datasets
-
----
-
-## 📝 Key Learning Outcomes
-
-- **Search Algorithms**: BFS, DFS, A*, Best-First Search
-- **Machine Learning**: Decision Trees, Neural Networks, Naive Bayes
-- **Ensemble Methods**: AdaBoost for combining weak learners
-- **Classification**: K-NN, SVM concepts
-- **Clustering**: Data separation and boundary identification
-- **Evaluation**: Accuracy metrics and model comparison
-
----
-
-*Happy Learning! 🤖📊*
