@@ -460,30 +460,24 @@ Neural Network Implementation in R
 
 **Algorithm:** Create neural network for restaurant dataset using R's neuralnet package.
 
-```r
-# Required package
-library(neuralnet)
-
-# Set working directory
+```
 getwd()
-setwd("C:/Users/Nisha/OneDrive/Documents/Nisha")
+a <- read.csv(file.choose())
+head(a)
+View(a)
 
-# Read dataset
-d <- read.csv("restaurant.csv")
-d
+install.packages("ggplot2")
+library(ggplot2)
 
-# Create neural network
-net <- neuralnet(
-    WILLWAIT ~ ALT + BAR + FRI + HUN + PAT + PRICE + RAIN + RES + TYPE + EST,
-    d,
-    hidden = 3
-)
 
-# Plot network
-plot(net)
+ggplot(a, aes(x = TYPE, fill = WILLWAIT)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Restaurant Type vs Will Wait",
+       x = "Restaurant Type",
+       y = "Count") +
+  theme_minimal()
 
-# Make predictions
-prediction(net)
+
 ```
 
 **Network Configuration:**
