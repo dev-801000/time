@@ -164,5 +164,5 @@
 ---
 
 
-Course: B.Sc. IT  
-Subject: Digital Forensics  
+## PDF
+[CF_JOURNAL.pdf](https://github.com/user-attachments/files/22873232/CF_JOURNAL.pdf)
