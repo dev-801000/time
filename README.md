@@ -1,530 +1,460 @@
+# ☁️ Cloud Computing Practical Manual
+
+> **Subject:** Cloud Computing  
+> **Total Practicals:** 6  
+> **Tools Used:** Java, Python (Flask), NetBeans IDE, GlassFish Server, VMware, Google Cloud
+
+---
+
 # PRACTICAL NO 1
 
 ## AIM :-
-Install Selenium IDE and create a test suite containing a minimum of 4 test cases for different web page formats (e.g., HTML, XML, JSON, etc.).
+Define a simple service like Converting Rs into Dollar and call it from different platforms like JAVA and .NET.
 
 ---
 
-## STEPS:-
+## STEPS :-
 
-1). Open your browser, search for “Selenium IDE” and click on the first link. Add the “Selenium IDE” extension to your browser.
+1. From **File Menu** → Select **New Project** → Categories: `Java Web` → Projects: `Web Application` → Click **Next**.
 
-2). For testing, we need a test case suite, so we create a Web-Application in NetBeans IDE.
-    Open NetBeans IDE  
-    Go to File and click on New Project  
-    Select Java Web  
-    Select Web Application  
-    Add Apache Tomcat server  
-    Click on Finish  
+2. Give the project a name and click **Next**.
 
-3). Write the following code for “ARITHMETIC OPERATIONS” test case suite:  
+3. Select **GlassFish Server** and click **Finish** to create the Web Application.
 
-<index.html>
-```html
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Prac 1</title> 
-<script language ="javascript"> 
-function addition(){ 
-var num1 = parseInt(document.arithmetic.n1.value); 
-var num2 = parseInt(document.arithmetic.n2.value); 
-var result = num1 + num2; 
-document.arithmetic.res.value = result; 
-} 
-function subtraction(){ 
-var num1 = parseInt(document.arithmetic.n1.value); 
-var num2 = parseInt(document.arithmetic.n2.value); 
-var result = num1 - num2; 
-document.arithmetic.res.value = result; 
-} 
-function multiplication(){ 
-var num1 = parseInt(document.arithmetic.n1.value); 
-var num2 = parseInt(document.arithmetic.n2.value); 
-var result = num1 * num2; 
-document.arithmetic.res.value = result; 
-} 
-function division(){ 
-var num1 = parseInt(document.arithmetic.n1.value); 
-var num2 = parseInt(document.arithmetic.n2.value); 
-var result = num1 / num2; 
-document.arithmetic.res.value = result; 
-} 
-</script> 
-</head> 
-<body> 
-<h1 align ="center">Arithmetic Operations</h1> 
-<form name="arithmetic"> 
-<table border="1" align="center"> 
-<tr> 
-<td> Number 1: </td> 
-<td> <input type="text" name="n1" size="20"> </td> 
-</tr> 
-<tr> 
-<td> Number 2: </td> 
-<td> <input type="text" name="n2" size="20"> </td> 
-</tr> 
-<tr> 
-<td colspan="2"> 
-<input type="button" name="Add" value="addition" onclick="javascript:addition();">&nbsp; 
-<input type="button" name="Sub" value="subtraction" onclick="javascript:subtraction();">&nbsp; 
-<input type="button" name="Mul" value="multiplication" onclick="javascript:multiplication();">&nbsp; 
-<input type="button" name="Div" value="division" onclick="javascript:division();">&nbsp; 
-</td> 
-</tr> 
-<tr> 
-<td colspan="2"> Result is : <input type="text" name="res" size="20" value=""> </td> 
-</tr> 
-</table> 
-</form> 
-</body> 
-</html>
-```
+4. Right-click on your project → Click **New** → Select **Web Service**.
 
-<newjsp.jsp>
+5. Give the **Web Service name** and **Package name** → Click **Finish**.
 
-```jsp
-<%@page contentType="text/html" pageEncoding="UTF-8"%> 
-<!DOCTYPE html> 
-<html> 
-<head> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<title>JSP Page</title> 
-</head> 
-<body align="center"> 
-<h1>Test Cases IDE</h1> 
-<a href="index.html">Arithmetic Operations</a> 
-</body> 
-</html>
-```
+6. Right-click on your code → Select **Insert Code**.
 
-4). Run this JSP file from NetBeans.
+7. From the Insert Code tab → Select **Add Web Service Operation**.
 
-    It will then open up in a browser.
-   
-    Then from the browser, open the link.
-   
-    Now you’ll be redirected to ARITHMETIC OPERATIONS page.
-   
-    Copy the URL of the page and open “Selenium IDE” extension.
+8. In the Add Operation tab → Give **Operation name**, **Return type**, **Parameters** → Click **OK**.
 
-5). Record a new test project in Selenium IDE.
+9. Operation will be added in your code — change the return value to implement the conversion logic (Rs → Dollar).
 
- Name your project.
+10. Right-click on the project → Click **Deploy**.
 
- Paste that URL here and click Start Recording.
+11. View the output screen after successful deployment.
 
- A new tab will be opened, maximize that tab (this tab is your working tab for recording).
+12. Right-click on your Web Service → Click **Test Web Service** to verify.
 
- Perform your task, remember each click gets recorded so avoid making unnecessary clicks.
+13. To create the **Client Application**: File Menu → New Project → Categories: `Java` → Projects: `Java Application` → Click **Next**.
 
- Click on Stop Recording.
- Just as you stop your recording, you’ll be prompted to Name your new test, provide a name and click on OK.
- Now, to see the recording click on Run Current Test.
+14. Give the project a name → Click **Finish**.
 
+15. Right-click on your project → New → **Web Service Client**.
+
+16. Click **Browse** → Select your Web Service → Give Package name → Click **OK** and **Finish**.
+
+17. Right-click on your code → **Insert Code**.
+
+18. From the Insert Code tab → Select **Call Web Service Operation**.
+
+19. Select your operation → Click **OK**.
+
+20. Add the code to run your application.
+
+21. Run your App.
+
+## OUTPUT :-
+- Successful deployment screen on GlassFish Server.
+- Java application runs and shows the converted Dollar value from Rs input.
 
 ---
-
 
 # PRACTICAL NO 2
 
 ## AIM :-
-Conduct a test suite for two different websites using Selenium IDE. Perform various actions like clicking links, filling forms, and verifying content.
+Create a Simple SOAP Service.
 
 ---
 
-## STEPS:-
+## STEPS :-
 
-1). Open your browser, search for “Selenium IDE” and click on the first link. Add the “Selenium IDE” extension to your browser.
+1. Create a **Web Application**: New Project → Java Web → Web Application.
 
-2). For testing, we’ll choose “redbus.in” as our first website. We’ll be checking some Selenium IDE Commands like assertText, verifyTitle, storeText, echo.  
-    Now Google, “Redbus.in”.  
-    Copy the URL of the page and open “Selenium IDE” Extension.  
-    Now, Click on Record a new test project in a project  
-    Provide a name for your project.  
-    Paste that URL here and click on Start Recording.  
-    A new tab will be opened, maximize that tab (this tab is your working tab for recording).  
-    Now we’ll make use of command verifyTitle. (This command verifies title of the webpage and keeps on continuing the execution.) So anywhere on the window, do Right Click > select Selenium IDE > click Verify Title.  
-    Now after filling the FROM, TO, ONWARD DATE, we proceed further by clicking on Search Buses.  
-    Now we’ll make use of command assertText. (This command verifies particular text of the webpage and stops the execution of testcase if the match isn’t found.) So, we want to make sure that our automated testcase chooses our specified Bus Provider. To ensure that, here we do Right Click over the name of the bus provider > then select Selenium IDE > and click Assert Text.  
-    Now we’ll make use of command storeText. (This command stores the text value of page element into variable for future use.) Here we’ll store the price of the ticket. So, we select the price > right click over it > select Selenium IDE > click Store Text.  
-    Now Selenium IDE will prompt us to enter the name of the variable in which that price will be stored.  
-    After clicking OK, we can see how the target is automatically mapped to the css attribute of the page, and our price is stored.  
-    Now we’ll make use of command echo. (This command is used to display text (comments, notes) and/or the stored value of variables in the log area of Selenium IDE.) Here we’ll display the price of the ticket from the variable “price” that we stored during the use of storeText command. To create a new command, we just click onto the next line and enter our command.  
-    We’ll enter the Command name echo, & Value ${price} because we are calling the created variable “price” from this command.  
-    Click on Stop recording and provide a name for test.  
-    Now we’ll Run current test.  
-    After the test gets completed, we can see the echo: 3000 in the log area of Selenium IDE showing the output of the echo command. Here we can see how 3000 is stored in variable “price” by storeText command, and that variable is then called by the echo command, which is then returning the value fetched from the page.
+2. Name the project and click **Next**.
 
----
+3. Select **GlassFish Server** → Click **Finish**.
+
+4. Right-click project → **New** → **Web Service**.
+
+5. Provide Web Service name and Package name → Click **Finish**.
+
+6. Right-click code → **Insert Code** → Select **Add Web Service Operation**.
+
+7. Define **Operation name**, **Return type**, and **Parameters** → Click **OK**.
+
+8. Modify the return value in the generated code. Add more operations as needed.
+
+9. Right-click project → **Deploy**.
+
+10. View output screen after successful deployment.
+
+11. Right-click Web Service → **Test Web Service** to verify SOAP operations.
+
+12. Create a **Java Application**: New Project → Java → Java Application.
+
+13. Name the project → Click **Finish**.
+
+14. Right-click project → New → **Web Service Client** → Browse to select the Web Service → Provide Package name → Click **Finish**.
+
+15. Right-click code → **Insert Code** → **Call Web Service Operation**.
+
+16. Select all required operations one by one.
+
+17. Add the code to run the application.
+
+18. Run your App.
 
 ## OUTPUT :-
-
-- Successfully recorded test cases in Selenium IDE for Redbus.in.  
-- Commands used include **verifyTitle**, **assertText**, **storeText**, and **echo**.  
-- The price of the ticket is stored in a variable using storeText and displayed using echo command.  
-- Selenium IDE executes all recorded actions to validate content and functionality of the website.
-
-
+- Successful SOAP service deployed on GlassFish.
+- Java client application successfully calls SOAP operations and displays results.
 
 ---
-
 
 # PRACTICAL NO 3
 
 ## AIM :-
-Write a program using Selenium WebDriver to automate the login process on a specific web page. Verify successful login with appropriate assertions.
+Create a Simple REST Service.
+
+---
+
+## STEPS :-
+
+1. Write the Python/Flask code given below.
+
+2. Run the python script in **CMD** using:
+   ```
+   python app.py
+   ```
+
+3. Open a browser and type `http://127.0.0.1:5000/items` → displays all records.
+
+4. Type `http://127.0.0.1:5000/items/1` → displays item with ID 1.
+
+5. Open a new CMD terminal and run the following POST command to add a new record:
+   ```powershell
+   Invoke-WebRequest -Uri http://127.0.0.1:5000/items -Method Post -Headers @{"Content-Type" = "application/json"} -Body '{"name" : "New Item"}'
+   ```
+
+6. Refresh the items URL → displays the updated records.
 
 ---
 
 ## CODE :-
-```java
-package hello;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+```python
+from flask import Flask, jsonify, request
 
-public class hello {
-    static String drivePath ="D:\\STQA\\Selenium\\geckodriver.exe";
-    public static WebDriver driver;
+app = Flask(__name__)
 
-    public static void main(String[] args) {
-        System.out.println("Hi.. We are Testing the RC server");
-        System.out.println("Selenium Demo");
+# In-memory data store
+data = [
+    {'id': 1, 'name': 'Item 1'},
+    {'id': 2, 'name': 'Item 2'},
+]
 
-        System.setProperty("webdriver.gecko.driver", drivePath);
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", true);
+# GET all items
+@app.route('/items', methods=['GET'])
+def get_items():
+    return jsonify({'items': data})
 
-        driver = new FirefoxDriver();
-        driver.get("http://www.google.com");
-        driver.manage().window().maximize();
+# GET single item by ID
+@app.route('/items/<int:item_id>', methods=['GET'])
+def get_item(item_id):
+    item = next((item for item in data if item['id'] == item_id), None)
+    if item:
+        return jsonify({'item': item})
+    else:
+        return jsonify({'message': 'Item not Found'}), 404
 
-        driver.quit();
-    }
-}
+# POST - Add new item
+@app.route('/items', methods=['POST'])
+def add_item():
+    new_item = {'id': len(data) + 1, 'name': request.json['name']}
+    data.append(new_item)
+    return jsonify({'message': 'Item added successfully', 'item': new_item}), 201
 
+if __name__ == '__main__':
+    app.run(debug=True)
 ```
 
+## OUTPUT :-
+- JSON response showing list of all items at `/items`.
+- Single item JSON response at `/items/1`.
+- New item added successfully via POST request.
+- Updated item list visible after refresh.
 
 ---
-
 
 # PRACTICAL NO 4
 
 ## AIM :-
-Write a program using Selenium WebDriver to update 10 student records in an Excel file. Perform data manipulation and verification.
+Develop an application to consume Google's Search / Google's Map RESTful Web Service.
 
 ---
 
-## STEPS:-
+## STEPS :-
 
-1). Download & Install Selenium IDE.
+1. Login to **Google Cloud Console** at `https://console.cloud.google.com`.
 
-2). For testing WebDriver for verifying Excel sheet, we have to provide script.  
-    Open Eclipse IDE  
-    Select a Workspace for your project  
-    In Eclipse IDE, click on create a new java project  
-    In New Java Project window, provide a Project Name, leave the settings default and click on finish  
-    From left panel, Left click on project name, go to Build Path and select Configure Build Path  
-    In Properties window, select Java Build Path from left panel, then select Libraries Tab  
-    In Libraries Tab, select Classpath and click on Add External JARs  
-    After Adding JAR files, click on Apply and Close  
-    From menu bar, click on Help and open Eclipse Marketplace  
-    In Eclipse Marketplace window, search for TestNG for Eclipse and click on install  
-    Click on Confirm for proceeding with the download  
-    Accept the Terms and click on Finish  
-    From left panel, Left click on project name, go to Build Path and select Add Libraries  
-    In Add Library window, select TestNG and click on Next  
-    From left panel, Left click on project name, go to New and click on Class  
-    In New Java Class window, provide a name and click on Finish  
+2. Click on **"New Project"** in the select project tab.
 
-3). Create 2 Excel sheets for this project:  
-    `Students.xls` – Input Excel file with student records  
-    `results.xls` – Output Excel file (must be empty, will be used for results)  
+3. Give the project a name → Click **Create**.
 
-4). Write the following code for checking WebDriver:
+4. Open the **Project Dashboard**.
 
-```java
-package StudentResult;
+5. Go to **"APIs and Services"** → **"Enabled APIs and Services"**.
 
-import jxl.Sheet;
-import jxl.Workbook;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import jxl.write.*;
-import java.io.*;
+6. Click on **"+ ENABLE APIS AND SERVICES"**.
 
-public class StudentResult {
-    @BeforeClass
-    public void f1() {}
+7. Search for `Custom Search API`.
 
-    @Test
-    public void testImportExport1() throws Exception {
-        FileInputStream f1 = new FileInputStream("D:\\STQA\\Selenium\\Student.xls");
-        Workbook w = Workbook.getWorkbook(f1);
-        Sheet s = w.getSheet(0);
-        String a[][] = new String[s.getRows()][s.getColumns()];
-        FileOutputStream f0 = new FileOutputStream("D:\\STQA\\Selenium\\results.xls");
-        WritableWorkbook wwb = Workbook.createWorkbook(f0);
-        WritableSheet ws = wwb.createSheet("result1", 0);
+8. Select **Custom Search API** from results.
 
-        for(int i=0; i<s.getRows(); i++) {
-            for(int j=0; j<s.getColumns(); j++) {
-                a[i][j] = s.getCell(j,i).getContents();
-                Label l2 = new Label(j,i,a[i][j]);
-                ws.addCell(l2);
-                Label l1 = new Label(6,0,"Result");
-                ws.addCell(l1);
-            }
-        }
+9. Click **Enable** → then click **"Try this API"**.
 
-        for(int i=1; i<s.getRows(); i++) {
-            for(int j=2; j<s.getColumns(); j++) {
-                a[i][j] = s.getCell(j,i).getContents();
-                int x = Integer.parseInt(a[i][j]);
-                if(x>35) {
-                    Label l1 = new Label(6,i,"Pass");
-                    ws.addCell(l1);
-                } else {
-                    Label l1 = new Label(6,i,"Fail");
-                    ws.addCell(l1);
-                    break;
-                }
-            }
-        }
+10. Click on the **Control Panel**.
 
-        wwb.write();
-        wwb.close();
-    }
-}
-```
+11. Name the search engine, provide site URL (`www.google.com`) → Click **Add**.
 
+12. Complete the **CAPTCHA** and click **Create**.
+
+13. Copy the generated API code/snippet.
+
+14. Paste the code into an **HTML file** in **VS Code**.
+
+15. Run it using the **"Go Live"** extension.
+
+16. Consume Google Search through the browser interface.
+
+## OUTPUT :-
+- A functional Google Custom Search interface running in the browser.
+- Search queries return relevant results via Google's RESTful API.
 
 ---
-
 
 # PRACTICAL NO 5
 
 ## AIM :-
-Write a program using Selenium WebDriver to select the number of students who have scored more than 60 in any one subject (or all subjects). Perform data extraction and analysis.
+Installation and Configuration of Virtualization using KVM.
 
 ---
 
-## STEPS:-
+## STEPS :-
 
-1). Download & Install Selenium IDE.
+1. Install and open **VMware Workstation** → Click **"Create a New Virtual Machine"**.
 
-2). For testing WebDriver for verifying Excel sheet, we have to provide script.  
-    Open Eclipse IDE  
-    Select a Workspace for your project  
-    In Eclipse IDE, click on create a new java project  
-    In New Java Project window, provide a Project Name, leave the settings default and click on finish  
-    In Properties window, select Java Build Path from left panel, then select Libraries Tab  
-    In Libraries Tab, select Classpath and click on Add External JARs  
-    After Adding JAR files, click on Apply and Close  
-    From menu bar, click on Help and open Eclipse Marketplace  
-    In Eclipse Marketplace window, search for TestNG for Eclipse and click on install  
-    Click on Confirm for proceeding with the download  
-    From left panel, Left click on project name, go to Build Path and select Add Libraries  
-    In Add Library window, select TestNG and click on Next and Finish  
-    From left panel, Left click on project name, go to New and click on Class  
-    In New Java Class window, provide a name and click on Finish  
+2. Select **"Typical (recommended)"** → Click **Next**.
 
-3). Create 2 Excel sheets for this project:  
-    `Students.xls` – Input Excel file with student records  
-    `results1.xls` – Output Excel file (must be empty, will be used for results)  
+3. Select **"Installer disc image file (iso)"** → Browse and select the **Ubuntu ISO** file.
 
-4). Write the following code for checking WebDriver:
+4. Provide user information (Full name, Username, Password) → Click **Next**.
 
-```java
-package CountStud;
+5. Name the virtual machine → Select storage location → Click **Next**.
 
-import jxl.*;
-import jxl.write.*;
-import java.io.*;
-import org.testng.annotations.Test;
+6. Specify disk capacity → Select **"Split virtual disk into multiple files"** → Click **Next**.
 
-public class CountStud {
-    @Test
-    public void testImportExport1() throws Exception {
-        FileInputStream f1 = new FileInputStream("D:\\STQA\\Selenium\\Student.xls");
-        Workbook w = Workbook.getWorkbook(f1);
-        Sheet s = w.getSheet(0);
-        String a[][] = new String[s.getRows()][s.getColumns()];
-        FileOutputStream f0 = new FileOutputStream("D:\\STQA\\Selenium\\result1.xls");
-        WritableWorkbook wwb = Workbook.createWorkbook(f0);
-        WritableSheet ws = wwb.createSheet("Result", 0);
-        int c = 0;
+7. Click **Finish** to complete hardware requirements setup.
 
-        for(int i=0; i<s.getRows(); i++) {
-            for(int j=0; j<s.getColumns(); j++) {
-                if(i>=1) {
-                    String b = s.getCell(3, i).getContents();
-                    int x = Integer.parseInt(b);
-                    if(x < 60) {
-                        c++;
-                        break;
-                    }
-                }
-                a[i][j] = s.getCell(j, i).getContents();
-                Label l2 = new Label(j, i-c, a[i][j]);
-                ws.addCell(l2);
-            }
-        }
+8. Ubuntu setup opens → Select **Keyboard Layout** → Click **Continue**.
 
-        wwb.write();
-        wwb.close();
-    }
-}
-```
+9. Select **"Normal Installation"** and check **"Download updates while installing Ubuntu"** → Click **Continue**.
 
+10. Select **"Erase disk and install Ubuntu"** → Click **Install Now**.
+
+11. Click **Continue** on the **"Write changes to disk"** confirmation.
+
+12. Select your **Region/Timezone** → Click **Continue**.
+
+13. Provide **user account information** (name, computer name, password) → Click **Continue**.
+
+14. Wait for the background installation to complete.
+
+15. Click **Restart Now** when prompted.
+
+16. Log in to start using the **Ubuntu Virtual Machine**.
+
+## OUTPUT :-
+- Ubuntu Linux successfully installed and running inside VMware Workstation.
+- KVM virtualization configured and operational.
 
 ---
-
 
 # PRACTICAL NO 6
 
 ## AIM :-
-Write a program using Selenium WebDriver to provide the total number of objects present or available on a web page. Perform object identification and counting.
+Develop an application to download image/video from server or upload image/video to server using MTOM techniques.
 
 ---
 
-## CODE :-
+## STEPS :-
+
+**Server Side (MTOMServer):**
+1. Create a new Java Web Application → Name it `MTOMServer`.
+2. Select **GlassFish Server**.
+3. Create a new **Java Class** → Name: `ImageWS`, Package: `mypkg`.
+4. Replace the code in `ImageWS.java` with the server code below.
+5. Right-click project → **Deploy**.
+6. Verify successful deployment.
+
+**Client Side (MTOMClient):**
+7. Create a new Java Web Application → Name it `MTOMClient`.
+8. Select **GlassFish Server**.
+9. Create a new **JSP file** → Name it `index.jsp`.
+10. Replace code in `index.jsp` with the client code below.
+11. Right-click project → New → **Web Service Client**.
+12. Browse to the `ImageWS` service → Set package name.
+13. Go to **Project Properties** → **Libraries** → Add library **JAX-WS 2.2.6**.
+14. Run the application.
+15. Check `D:/upload/` and `D:/Downloaded/` folders for uploaded/downloaded files.
+
+---
+
+## SERVER CODE :- (`ImageWS.java`)
+
 ```java
-package CountLink;
+package mypkg;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import java.io.*;
+import javax.jws.Oneway;
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.xml.ws.soap.MTOM;
 
-public class CountLink {
-    static String driverPath = "D:\\STQA\\Selenium\\geckodriver.exe";
-    public static FirefoxDriver driver;
+@MTOM(enabled = true, threshold = 60000)
+@WebService(serviceName = "ImageWS")
+public class ImageWS {
 
-    public static void main(String[] args) {
-        System.setProperty("webdriver.gecko.driver", driverPath);
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", true);
+    // Upload Method
+    @WebMethod(operationName = "upload")
+    @Oneway
+    public void upload(
+        @WebParam(name = "Filename") String Filename,
+        @WebParam(name = "ImageBytes") byte[] ImageBytes) {
 
-        driver = new FirefoxDriver();
-        driver.get("http://www.wikipedia.com");
-
-        java.util.List<WebElement> Links = driver.findElements(By.tagName("a"));
-        System.out.println("Total links are " + Links.size());
-
-        for(int i=0; i<Links.size(); i++) {
-            System.out.println("Links " + i + " Link name " + Links.get(i).getText());
+        String filePath = "D:/upload/" + Filename;
+        try {
+            FileOutputStream fos = new FileOutputStream(filePath);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            bos.write(ImageBytes);
+            bos.close();
+            System.out.println("Received file: " + filePath);
+        } catch (Exception ex) {
+            System.out.println(ex);
         }
+    }
+
+    // Download Method
+    @WebMethod(operationName = "download")
+    public byte[] download(@WebParam(name = "Filename") String Filename) {
+        String filePath = "D:/Downloaded/" + Filename;
+        try {
+            File file = new File(filePath);
+            FileInputStream fis = new FileInputStream(file);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            byte[] fileBytes = new byte[(int) file.length()];
+            bis.read(fileBytes);
+            bis.close();
+            return fileBytes;
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        return null;
     }
 }
 ```
 
+---
 
+## CLIENT CODE :- (`index.jsp`)
 
+```jsp
+<%@page import="java.io.*"%>
+<%@page import="javax.xml.ws.soap.MTOMFeature"%>
+<html>
+<body>
 
+<%
+// ── UPLOAD ───────────────────────────────────────────────
+try {
+    mypkg.ImageWS_Service service = new mypkg.ImageWS_Service();
+    mypkg.ImageWS port = service.getImageWSPort(new MTOMFeature(60000));
 
-# PRACTICAL NO 7 
-AIM: Write a program using Selenium WebDriver to get the number of items in a list or combo box on a web 
-page. Perform element identification and counting 
-Code:- 
-Create a web page consisting of a combo box with multiple values.
- 
-  ComboBox.html 
- ```<html> 
-<body> 
-<select id='combo'> 
-<option>Volvo</option> 
-<option>Express</option> 
-<option>Mercedes</option> 
-<option>RajaHamsa</option> 
-</select> 
-</body> 
-</html> 
-1). Write the following code for checking Webdriver. 
-package ComboBox; 
-import java.util.List; 
-import org.openqa.selenium.By; 
-import org.openqa.selenium.WebDriver; 
-import org.openqa.selenium.WebElement; 
-import org.openqa.selenium.firefox.FirefoxDriver; 
-import org.openqa.selenium.remote.DesiredCapabilities; 
-import org.openqa.selenium.support.ui.Select; 
-public class ComboBox { 
-static String driverpath = "D:\\STQA\\Selenium\\geckodriver.exe"; 
-public static WebDriver driver; 
-public static void main(String[] args) { 
-System.setProperty("webdriver.gecko.driver", driverpath); 
-DesiredCapabilities capabilities = DesiredCapabilities.firefox(); 
-capabilities.setCapability("marionette", true); 
-driver = new FirefoxDriver(capabilities); 
-driver.get("D:\\STQA\\Selenium\\ComboDemo.html"); 
-Select oSelect = new Select(driver.findElement(By.id("combo"))); 
-List<WebElement> oSize = oSelect.getOptions(); 
-int iListSize = oSize.size(); 
-for(int i=0; i<iListSize; i++) { 
-String sValue = oSelect.getOptions().get(i).getText(); 
-} 
-System.out.println("Total No. of Items in Dropdown : "+iListSize); 
-}```
-  
- 
-OUTPUT:-
+    String filePath = "D:/ABC.png";
+    File file = new File(filePath);
+    FileInputStream fis = new FileInputStream(file);
+    BufferedInputStream bis = new BufferedInputStream(fis);
+    byte[] imageBytes = new byte[(int) file.length()];
+    bis.read(imageBytes);
 
+    port.upload(file.getName(), imageBytes);
+    bis.close();
+    out.println("File uploaded: " + filePath);
+} catch (Exception ex) {
+    out.println("Upload Error: " + ex.getMessage());
+}
+%>
 
+<hr/>
 
+<%
+// ── DOWNLOAD ─────────────────────────────────────────────
+try {
+    mypkg.ImageWS_Service service = new mypkg.ImageWS_Service();
+    mypkg.ImageWS port = service.getImageWSPort();
+
+    String filename = "ABC.png";
+    byte[] fileBytes = port.download(filename);
+
+    FileOutputStream fos = new FileOutputStream("D:/Downloaded/" + filename);
+    BufferedOutputStream bos = new BufferedOutputStream(fos);
+    bos.write(fileBytes);
+    bos.close();
+
+    out.println("File downloaded to D:/Downloaded/");
+} catch (Exception ex) {
+    out.println("Download Error: " + ex.getMessage());
+}
+%>
+
+</body>
+</html>
+```
+
+## OUTPUT :-
+- Image/video file successfully **uploaded** to `D:/upload/` directory.
+- Image/video file successfully **downloaded** to `D:/Downloaded/` directory.
+- MTOM technique used for efficient binary data transfer between client and server.
 
 ---
 
-PRACTICAL NO 8 
-AIM: Write a program using Selenium WebDriver to count the number of checkboxes on a web page, 
-including checked and unchecked counts. Perform checkbox identification and counting. 
-code:- 
- CheckBox.html 
- <html> 
-<body> 
-<form name="testform" action="" method="POST"> 
-<div align="center"> 
-<br> 
-<input id='c1' type="checkbox" name="option-1" value="Java">Java 
-<input id='c1' type="checkbox" name="option-2" value="C++">C++ 
-<input id='c1' type="checkbox" name="option-3" value="Python">Python 
-<input id='c1' type="checkbox" name="option-4" value="PHP">PHP 
-<input id='c1' type="checkbox" name="option-5" value="CSharp">CSharp 
-<input id='c1' type="checkbox" name="option-6" value="Ruby">Ruby 
-<input id='c1' type="checkbox" name="option-7" value="Perl">Perl 
-</form> 
-</body> 
-</html> 
-1). Write the following code for checking Webdriver. 
-package CheckBox; 
-import java.util.*; 
-import org.openqa.selenium.By; 
-import org.openqa.selenium.WebDriver; 
-import org.openqa.selenium.WebElement; 
-import org.openqa.selenium.firefox.FirefoxDriver; 
-class CheckBox { 
-public static void main(String[] args) { 
-System.setProperty("webdriver.gecko.driver", "D:\\STQA\\Selenium\\geckodriver.exe");  
-WebDriver driver = new FirefoxDriver(); 
-driver.get("D:\\STQA\\Selenium\\CheckBox.html"); 
-int chk=0; 
-int unchk=0; 
-List<WebElement> els = driver.findElements(By.id("c1")); 
-for(WebElement el:els) { 
-if(el.isSelected()) { 
-chk++; 
-} 
-else { 
-} 
-unchk++; 
-} 
-System.out.println("Total Checked : "+chk); 
-System.out.println("Total Unchecked : "+unchk); 
-} 
-}
-OUTPUT:-
+## 🛠️ Prerequisites
 
+| Tool | Purpose |
+|------|---------|
+| Java JDK | Java development |
+| NetBeans IDE | Project creation & deployment |
+| GlassFish Server | Hosting web services |
+| Python 3.x + Flask | REST service (Practical 3) |
+| VMware Workstation | Virtualization (Practical 5) |
+| Google Cloud Account | API integration (Practical 4) |
+| JAX-WS 2.2.6 JAR | MTOM web service (Practical 6) |
 
+---
+
+## 🚀 Quick Start
+
+```bash
+# Practical 3 - REST Service
+pip install flask
+python app.py
+# Visit: http://127.0.0.1:5000/items
+```
+
+---
+
+*📘 Cloud Computing Lab Manual — For Educational Use Only*
