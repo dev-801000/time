@@ -1,8 +1,3 @@
-# ☁️ Cloud Computing Practical Manual
-
-> **Subject:** Cloud Computing  
-> **Total Practicals:** 6  
-> **Tools Used:** Java, Python (Flask), NetBeans IDE, GlassFish Server, VMware, Google Cloud
 
 ---
 
