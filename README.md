@@ -427,29 +427,4 @@ try {
 
 ---
 
-## 🛠️ Prerequisites
 
-| Tool | Purpose |
-|------|---------|
-| Java JDK | Java development |
-| NetBeans IDE | Project creation & deployment |
-| GlassFish Server | Hosting web services |
-| Python 3.x + Flask | REST service (Practical 3) |
-| VMware Workstation | Virtualization (Practical 5) |
-| Google Cloud Account | API integration (Practical 4) |
-| JAX-WS 2.2.6 JAR | MTOM web service (Practical 6) |
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Practical 3 - REST Service
-pip install flask
-python app.py
-# Visit: http://127.0.0.1:5000/items
-```
-
----
-
-*📘 Cloud Computing Lab Manual — For Educational Use Only*
