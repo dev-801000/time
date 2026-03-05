@@ -8,55 +8,73 @@ Define a simple service like Converting Rs into Dollar and call it from differen
 
 ---
 
-## STEPS :-
+```java
+package server;
 
-1. From **File Menu** → Select **New Project** → Categories: `Java Web` → Projects: `Web Application` → Click **Next**.
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
 
-2. Give the project a name and click **Next**.
+@WebService(serviceName = "INRtoUSD")
+public class INRtoUSD {
 
-3. Select **GlassFish Server** and click **Finish** to create the Web Application.
-
-4. Right-click on your project → Click **New** → Select **Web Service**.
-
-5. Give the **Web Service name** and **Package name** → Click **Finish**.
-
-6. Right-click on your code → Select **Insert Code**.
-
-7. From the Insert Code tab → Select **Add Web Service Operation**.
-
-8. In the Add Operation tab → Give **Operation name**, **Return type**, **Parameters** → Click **OK**.
-
-9. Operation will be added in your code — change the return value to implement the conversion logic (Rs → Dollar).
-
-10. Right-click on the project → Click **Deploy**.
-
-11. View the output screen after successful deployment.
-
-12. Right-click on your Web Service → Click **Test Web Service** to verify.
-
-13. To create the **Client Application**: File Menu → New Project → Categories: `Java` → Projects: `Java Application` → Click **Next**.
-
-14. Give the project a name → Click **Finish**.
-
-15. Right-click on your project → New → **Web Service Client**.
-
-16. Click **Browse** → Select your Web Service → Give Package name → Click **OK** and **Finish**.
-
-17. Right-click on your code → **Insert Code**.
-
-18. From the Insert Code tab → Select **Call Web Service Operation**.
-
-19. Select your operation → Click **OK**.
-
-20. Add the code to run your application.
-
-21. Run your App.
-
-## OUTPUT :-
-- Successful deployment screen on GlassFish Server.
-- Java application runs and shows the converted Dollar value from Rs input.
+    @WebMethod(operationName = "convert")
+    public double convert(@WebParam(name = "rupees") double rupees) {
+        
+        double exchangeRate = 83.0; // 1 USD = 83 INR
+        double usd = rupees / exchangeRate;
+        
+        return usd;
+    }
+}
+```
 
 ---
+
+## input
+
+```html
+<html>
+<body>
+
+<h2>INR to USD</h2>
+
+<form action="output.jsp">
+
+Enter Rupees:
+<input type="text" name="rs">
+
+<br><br>
+
+<input type="submit" value="Convert">
+
+</form>
+
+</body>
+</html>
+```
+
+---
+
+## output
+
+```html
+<html>
+<body>
+
+<%
+double rs = Double.parseDouble(request.getParameter("rs"));
+double usd = rs / 83;
+%>
+
+Rupees = <%= rs %> <br>
+USD = <%= usd %>
+
+</body>
+</html>
+```
+
+
 
 # PRACTICAL NO 2
 
