@@ -79,49 +79,90 @@ Create a Simple SOAP Service.
 
 ---
 
-## STEPS :-
 
-1. Create a **Web Application**: New Project → Java Web → Web Application.
+```java
 
-2. Name the project and click **Next**.
+package mypkg;
 
-3. Select **GlassFish Server** → Click **Finish**.
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
 
-4. Right-click project → **New** → **Web Service**.
 
-5. Provide Web Service name and Package name → Click **Finish**.
+@WebService(serviceName = "Think")
+public class Think {
 
-6. Right-click code → **Insert Code** → Select **Add Web Service Operation**.
 
-7. Define **Operation name**, **Return type**, and **Parameters** → Click **OK**.
+    @WebMethod(operationName = "hello")
+    public String hello(@WebParam(name = "name") String txt) {
+        return "Hello " + txt + " !";
+    }
 
-8. Modify the return value in the generated code. Add more operations as needed.
 
-9. Right-click project → **Deploy**.
+    @WebMethod(operationName = "Addition")
+    public int Addition(@WebParam(name = "x") int x, @WebParam(name = "y") int y) {
+        return x + y;
+    }
 
-10. View output screen after successful deployment.
+ 
+    @WebMethod(operationName = "Sub")
+    public int Sub(@WebParam(name = "x") int x, @WebParam(name = "y") int y) {
+        return x - y;
+    }
 
-11. Right-click Web Service → **Test Web Service** to verify SOAP operations.
 
-12. Create a **Java Application**: New Project → Java → Java Application.
+    @WebMethod(operationName = "Mul")
+    public int Mul(@WebParam(name = "x") int x, @WebParam(name = "y") int y) {
+        return x * y;
+    }
 
-13. Name the project → Click **Finish**.
 
-14. Right-click project → New → **Web Service Client** → Browse to select the Web Service → Provide Package name → Click **Finish**.
+    @WebMethod(operationName = "Div")
+    public int Div(@WebParam(name = "x") int x, @WebParam(name = "y") int y) {
+        return x / y;
+    }
+}
 
-15. Right-click code → **Insert Code** → **Call Web Service Operation**.
+##Output
 
-16. Select all required operations one by one.
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<script>
+function calculate() {
+    var x = parseInt(document.getElementById("x").value);
+    var y = parseInt(document.getElementById("y").value);
 
-17. Add the code to run the application.
+    document.getElementById("add").innerHTML = "Add : " + (x + y);
+    document.getElementById("sub").innerHTML = "Sub : " + (x - y);
+    document.getElementById("mul").innerHTML = "Mul : " + (x * y);
+    document.getElementById("div").innerHTML = "Div : " + (x / y);
+}
+</script>
+</head>
 
-18. Run your App.
+<body>
 
-## OUTPUT :-
-- Successful SOAP service deployed on GlassFish.
-- Java client application successfully calls SOAP operations and displays results.
+<h2>Calculator</h2>
 
----
+Enter the Value of x :  
+<input type="number" id="x"><br><br>
+
+Enter the Value of y :  
+<input type="number" id="y"><br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="add"></h3>
+<h3 id="sub"></h3>
+<h3 id="mul"></h3>
+<h3 id="div"></h3>
+
+</body>
+</html>
+
+```
 
 # PRACTICAL NO 3
 
@@ -130,29 +171,6 @@ Create a Simple REST Service.
 
 ---
 
-## STEPS :-
-
-1. Write the Python/Flask code given below.
-
-2. Run the python script in **CMD** using:
-   ```
-   python app.py
-   ```
-
-3. Open a browser and type `http://127.0.0.1:5000/items` → displays all records.
-
-4. Type `http://127.0.0.1:5000/items/1` → displays item with ID 1.
-
-5. Open a new CMD terminal and run the following POST command to add a new record:
-   ```powershell
-   Invoke-WebRequest -Uri http://127.0.0.1:5000/items -Method Post -Headers @{"Content-Type" = "application/json"} -Body '{"name" : "New Item"}'
-   ```
-
-6. Refresh the items URL → displays the updated records.
-
----
-
-## CODE :-
 
 ```python
 from flask import Flask, jsonify, request
@@ -190,13 +208,6 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-## OUTPUT :-
-- JSON response showing list of all items at `/items`.
-- Single item JSON response at `/items/1`.
-- New item added successfully via POST request.
-- Updated item list visible after refresh.
-
----
 
 # PRACTICAL NO 4
 
