@@ -27,9 +27,7 @@ public class INRtoUSD {
         return usd;
     }
 }
-```
 
----
 
 ## input
 
@@ -52,9 +50,7 @@ Enter Rupees:
 
 </body>
 </html>
-```
 
----
 
 ## output
 
