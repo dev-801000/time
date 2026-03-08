@@ -183,15 +183,25 @@ STEP 6 :- Click on Diagnostics.
 ---
 
 ## SOLUTION :-
-1. Set up a vulnerable web application in local lab environment.
-2. Configure the application and login with default admin credentials (lab).
-3. Set security level to low (lab).
-4. Navigate to Stored XSS section and test stored input behavior.
-5. Observe alert/script execution effect in controlled environment.
 
-## OUTPUT :-
-- Stored XSS ka concept samjha.
-- Input validation/output encoding ki importance observe ki.
+STEP 1:- Open Xampp Control Panel and start Apache and MySQL.  
+
+STEP 2:- In the browser, open http://localhost/xampp/DVWA/setup.php .  
+
+STEP 3:- Click on Create/Reset Database.  
+
+STEP 4:- Login with Username as 'admin' and Password as 'password'.  
+
+STEP 5:- Set the DVWA security level in the DVWA Security tab to Low and click on Submit.  
+
+STEP 6:- Click on XSS (Stored) → Fill the Name and write the script code as follows:
+
+<script>
+alert("Hello");
+</script>
+
+
+STEP 7:- Click on Sign Guestbook.
 
 ---
 
