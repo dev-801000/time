@@ -88,11 +88,15 @@ STEP 6 :- Click on Diagnostics.
 
 ## SOLUTION :-
 
-### Linux Network Analysis
-1. Ifconfig (Windows/Linux)
-2. Ping (Windows/Linux)
-3. Netstat (Windows/Linux)
-4. Traceroute (Windows/Linux)
+# Network Analysis Commands (Linux vs Windows)
+
+| Tool                    | Linux Command             | Windows Command        |
+| ----------------------- | ---------------------     | ------------------     |
+| Interface Configuration | ifconfig or ip addr       | ipconfig               |
+| Ping                    | ping www.google.com       | ping www.google.com    |
+| Netstat                 | netstat -tuln             | netstat -an            |
+| Traceroute              | traceroute www.google.com | tracert www.google.com |
+
 
 ### Use Cain & Abel Tool (ARP / Sniffer Observation)
 1. Download, Install and then Open the Cain & Abel Tool.
