@@ -126,11 +126,20 @@ STEP 6 :- Click on Diagnostics.
 ---
 
 ## SOLUTION :-
-1. ACK scan (TCP ACK scan) performed.
-2. SYN (Stealth) scan performed.
-3. FIN scan performed.
-4. NULL scan performed.
-5. XMAS scan performed.
+ACK -sA (TCP ACK scan) <br>
+Command :- nmap -sA -T4 scanme.nmap.org 
+ 
+SYN (Stealth) scan (-sS) <br>
+Command :- nmap -p22,113,139 scanme.nmap.org 
+ 
+FIN (-sF) <br>
+Command :- nmap -sF -T4 scanme.nmap.org 
+ 
+NULL Scan (-sN) <br>
+Command :- nmap -sN -p22 scanme.nmap.org 
+ 
+XMAS (-sX) <br>
+Command :- nmap -sX -T4 scanme.nmap.org
 
 ## OUTPUT :-
 - Different scan types ka behavior samjha.
