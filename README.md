@@ -249,11 +249,32 @@ http://localhost/index.html
 ---
 
 ## SOLUTION :-
-1. Install required browser extensions (lab).
-2. Login to a test web application (lab).
-3. Observe cookies/session identifiers behavior.
-4. Intercept requests and study how session values affect authentication (lab).
-5. Document secure session management practices.
+STEP 1:- Open FireFox and Go to Add-ons.
+
+STEP 2:- Add “Tamper Data for FF Quantum” Extension.
+STEP 3:- Add “Cookie-Editor” Extension.
+
+STEP 4:- Go to http://www.techpanda.org/index.php
+
+STEP 5:- Enter Email as ‘admin@google.com’ and Password as ‘Password2010’ and click on submit.
+
+STEP 6:- It will display the dashboard.
+
+STEP 7:- Click on Cookie-Editor Add-on. Copy the Session ID from there.
+
+STEP 8:- Don’t Log out and Cloae the Tab.
+
+STEP 9:- Start Tamper Data Add-on and click on Yes.
+
+STEP 10:- Go to http://www.techpanda.org/ and Click on OK.
+
+STEP 11:- Paste the Copied Session ID in Cookie tab and Click on OK.
+
+STEP 12:- Go to http://www.techpanda.org/dashboard.php and Click on OK.
+
+STEP 13:- Paste the Copied Session ID in Cookie tab and Click on OK.
+
+STEP 14:- You will be logged in to dashboard directly without logging in.
 
 ## OUTPUT :-
 - Session management ka concept aur risks samjhe.
