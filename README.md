@@ -214,6 +214,8 @@ STEP 7:- Click on Sign Guestbook.
 
 #OR
 
+# save a file on htdoc, index.html
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -227,8 +229,13 @@ alert("Hello World");
 </html>
 ```
 
+Onn Apache server<br>
+Onn MYSql server
 
-
+Type this on browser
+```
+http://localhost/index.html
+```
 ---
 
 # PRACTICAL NO 7
