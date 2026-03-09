@@ -212,6 +212,23 @@ alert("Hello");
 
 STEP 7:- Click on Sign Guestbook.
 
+#OR
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+alert("Hello World");
+</script>
+
+</body>
+</html>
+```
+
+
+
 ---
 
 # PRACTICAL NO 7
